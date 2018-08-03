@@ -18,7 +18,7 @@
 		<!-- MySql -->
 		<dependency>
 			<groupId>mysql</groupId>
-			<version>5.1.29</version>
+			<version>5.1.44</version>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 		<!-- Mybatis -->
@@ -36,8 +36,8 @@
 		<!-- 连接池 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
-			<version>1.0.4</version>
 			<artifactId>druid</artifactId>
+			<version>1.0.11</version>
 		</dependency>
 		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
@@ -52,7 +52,7 @@
 		</dependency>
 
 		<!-- Spring -->
-		<!-- spring核心包 -->
+		<!-- spring核心jar包 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -93,6 +93,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>1.2.28</version>
@@ -117,7 +123,7 @@
 			<artifactId>jedis</artifactId>
 			<version>2.7.2</version>
 		</dependency>
-		<!-- 日志处理(非必须) -->
+		<!-- 日志处理(非必需) -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
@@ -134,9 +140,42 @@
 			<artifactId>freemarker</artifactId>
 			<version>2.3.20</version>
 		</dependency>
-	</dependencies>
+		<!--springmvc 4.x Jackson Json处理工具包 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.5.4</version>
+		</dependency>
 
+		<!--dubbojar包 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.5.3</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>3.4.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.sgroschupf</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>0.1</version>
+		</dependency>
+
+
+	</dependencies>
 	<modules>
 		<module>oosweb-jdbc</module>
+		<module>oosweb-front-web</module>
 	</modules>
 </project>
